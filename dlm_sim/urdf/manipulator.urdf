@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+
+<robot name="single_link_arm">
+
+<link name="base_link">
+</link>
+
+<link name="base">
+        <visual>
+            <origin xyz="0.0 0.0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://dlm_sim/models/Base_2.stl"/>
+            </geometry>
+            <material name="White">
+                <color rgba="0.97 0.97 0.97 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0 0 0.21" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="0.42" radius=".075" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0 0 0.21" rpy="0 0 0"/>
+            <mass value="2.0"/>
+            <inertia ixx="0.032" ixy="0.0" ixz="0.0" iyy="0.0324" iyz="0.0" izz="0.0056"/>
+        </inertial>
+
+</link>
+
+<link name="link1">
+        <visual>
+            <origin xyz="0.06 0.13 0.0" rpy="1.57 -1.57 0.0" />
+            <geometry>
+                <mesh filename="package://dlm_sim/models/Arm_2.stl"/>
+            </geometry>
+            <material name="White">
+                <color rgba="0.97 0.97 0.97 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0.06 0.13 0.0" rpy="1.57 0 0"/>
+            <geometry>
+                <cylinder length="0.36" radius=".05" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.06 0.13 0.0" rpy="1.57 0 0"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.009" ixy="0.0" ixz="0.0" iyy="0.00" iyz="0.0" izz="0.0099"/>
+        </inertial>
+</link>
+
+<link name="link2">
+        <visual>
+            <origin xyz="0.06 0.1 0.0" rpy="1.57 -1.57 0.0" />
+            <geometry>
+                <mesh filename="package://dlm_sim/models/Arm2_2.stl"/>
+            </geometry>
+            <material name="White">
+                <color rgba="0.97 0.97 0.97 1.0"/>
+            </material>
+        </visual>
+
+        <collision>
+            <origin xyz="0.06 0.1 0.0" rpy="1.57 0 0"/>
+            <geometry>
+                <cylinder length="0.3" radius=".05" />
+            </geometry>
+        </collision>
+
+        <inertial>
+            <origin xyz="0.06 0.13 0.0" rpy="1.57 0 0"/>
+            <mass value="0.5"/>
+            <inertia ixx="0.009" ixy="0.0" ixz="0.0" iyy="0.00" iyz="0.0" izz="0.0099"/>
+        </inertial>
+</link>
+
+
+
+<joint name="joint1" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="base" />
+</joint>
+
+<joint name="joint2" type="continuous">
+    <origin xyz="0.085 0 0.37" rpy="0 0.0 0.0" />
+    <parent link="base" />
+    <child link="link1" />
+    <axis xyz="1 0 0" />
+</joint>
+
+<joint name="joint3" type="continuous">
+    <origin xyz="0.12 0.260 0.0 " rpy="0 0.0 0.0" />
+    <parent link="link1" />
+    <child link="link2" />
+    <axis xyz="1 0 0" />
+</joint>
+
+</robot>

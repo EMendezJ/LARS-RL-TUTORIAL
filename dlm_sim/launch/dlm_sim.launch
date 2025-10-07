@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<launch>
+
+    <!--Model Parameters-->
+    <arg name="link1_mass" default="1.5"/>
+    <arg name="link2_mass" default="1.5"/>
+    <arg name="link1_end_mass" default="1.0"/>
+    <arg name="link2_end_mass" default="1.0"/>
+
+    <arg name="link1_length" default="0.36"/>
+    <arg name="link1_COM_pos" default="0.18"/>
+    <arg name="link2_length" default="0.3"/>
+    <arg name="link2_COM_pos" default="0.15"/>
+
+    <arg name="coulomb_coeficient1" default="0.1"/>
+    <arg name="coulomb_coeficient2" default="0.1"/>
+    <arg name="viscous_coeficient1" default="0.25"/>
+    <arg name="viscous_coeficient2" default="0.25"/>
+
+    <!--Environment Parameters-->
+    <arg name="gravity" default="9.8"/>
+
+    <!--Simulation Parameters-->
+    <arg name="sample_time" default="0.02"/>
+    <arg name="q2_init_angle" default="0.1"/>
+    <arg name="q1_init_angle" default="0.1"/>
+    <arg name="tau2_0" default="0.0"/>
+    <arg name="tau1_0" default="0.0"/>
+    <arg name="q2_dot_0" default="0.0"/>
+    <arg name="q1_dot_0" default="0.0"/>
+
+    <node pkg="dlm_sim" type="dlm_dyn_sim.py" name="manipulator_joint_pub" output="screen">
+        <param name="tau2_0" value="$(arg tau2_0)"/>
+        <param name="tau1_0" value="$(arg tau1_0)"/>
+        <param name="q2_dot_0" value="$(arg q2_dot_0)"/>
+        <param name="q1_dot_0" value="$(arg q1_dot_0)"/>
+        <param name="q2_init_angle" value="$(arg q2_init_angle)"/>
+        <param name="q1_init_angle" value="$(arg q1_init_angle)"/>
+        <param name="link1_mass" value="$(arg link1_mass)"/>
+        <param name="link2_mass" value="$(arg link2_mass)"/>
+        <param name="link1_end_mass" value="$(arg link1_end_mass)"/>
+        <param name="link2_end_mass" value="$(arg link2_end_mass)"/>
+        <param name="link1_length" value="$(arg link1_length)"/>
+        <param name="link1_COM_pos" value="$(arg link1_COM_pos)"/>
+        <param name="link2_length" value="$(arg link2_length)"/>
+        <param name="link2_COM_pos" value="$(arg link2_COM_pos)"/>
+        <param name="coulomb_coeficient1" value="$(arg coulomb_coeficient1)"/>
+        <param name="coulomb_coeficient2" value="$(arg coulomb_coeficient2)"/>
+        <param name="viscous_coeficient1" value="$(arg viscous_coeficient1)"/>
+        <param name="viscous_coeficient2" value="$(arg viscous_coeficient2)"/>
+        <param name="sample_time" value="$(arg sample_time)"/>
+        <param name="gravity" value="$(arg gravity)"/>
+    </node>
+
+</launch>
