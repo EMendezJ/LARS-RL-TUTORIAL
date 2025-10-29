@@ -21,7 +21,7 @@ import torch.nn.functional as F
 import gymnasium as gym
 
 # Select cartpole environment
-env = gym.make("InvertedPendulum-v5",render_mode="human")
+env = gym.make("InvertedPendulum-v5")
 
 
 # set up matplotlib
@@ -82,7 +82,7 @@ LR = 3e-4
 
 
 n_actions = 17
-disctretized_actions = torch.linspace(-3,3,n_actions).to(device)
+discretized_actions = torch.linspace(-3,3,n_actions).to(device)
 # Get the number of state observations
 state, info = env.reset()
 
@@ -210,7 +210,7 @@ for i_episode in range(num_episodes):
         action_index = select_action(state)
 
         # 2. Map index to CONTINUOUS value
-        continuous_val = disctretized_actions[action_index.item()]
+        continuous_val = discretized_actions[action_index.item()]
         
         # 3. Use continuous value for env.step()
         observation, reward, terminated, truncated, _ = env.step([continuous_val.item()])
