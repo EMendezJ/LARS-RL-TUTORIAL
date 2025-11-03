@@ -1,3 +1,9 @@
-[submodule "uf-gym"]
-	path = uf-gym
-	url = https://github.com/EMendezJ/uf-gym.git
+[submodule "Day2/unitree_rl_lab"]
+	path = Day2/unitree_rl_lab
+	url = https://github.com/EMendezJ/unitree_rl_lab
+[submodule "Day2/unitree_sdk2"]
+	path = Day2/unitree_sdk2
+	url = https://github.com/EMendezJ/unitree_sdk2
+[submodule "Day2/unitree_mujoco"]
+	path = Day2/unitree_mujoco
+	url = https://github.com/EMendezJ/unitree_mujoco
