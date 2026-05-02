@@ -72,7 +72,7 @@ def train_sarsa(
     model_dir="models",
 ):
     """
-    Trains a SARSA agent on Taxi-v3.
+    Trains a SARSA agent on Taxi-v4.
 
     SARSA update:
 
@@ -148,7 +148,7 @@ def train_q_learning(
     model_dir="models",
 ):
     """
-    Trains a Q-learning agent on Taxi-v3.
+    Trains a Q-learning agent on Taxi-v4.
 
     Q-learning update:
 
@@ -252,7 +252,7 @@ def plot_training_curves(
         linewidth=2,
     )
 
-    plt.title("Taxi-v3: SARSA vs Q-learning")
+    plt.title("Taxi-v4: SARSA vs Q-learning")
     plt.xlabel("Training episode")
     plt.ylabel("Mean evaluation reward")
     plt.grid(alpha=0.3)
@@ -263,9 +263,9 @@ def plot_training_curves(
 
 def show_text_rollout(q_table, title, delay=0.5):
     """
-    Shows one greedy policy rollout using Taxi-v3 ANSI rendering.
+    Shows one greedy policy rollout using Taxi-v4 ANSI rendering.
     """
-    env = gym.make("Taxi-v3", render_mode="ansi")
+    env = gym.make("Taxi-v4", render_mode="ansi")
 
     state, info = env.reset()
     done = False
@@ -324,7 +324,7 @@ def main():
 
     set_seed(args.seed)
 
-    train_env = gym.make("Taxi-v3")
+    train_env = gym.make("Taxi-v4")
 
     print("Training SARSA...")
     q_sarsa, sarsa_rewards, sarsa_episodes = train_sarsa(
