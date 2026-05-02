@@ -180,8 +180,10 @@ cd ~/unitree_rl_lab/deploy/robots/go2/build
 
 ~~~ control 2 ~~~
 
-cd ~/unitree_rl_lab/deploy/robots/go2/build
+cd ~/unitree_mujoco/simulate/build
+
 ./unitree_mujoco
+
 
 #OR
 
@@ -195,7 +197,7 @@ mkdir -p ~/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity && \
 cp -r ~/LARS-RL-TUTORIAL/Day2/Sim2RealGo2/TrainedGo2LocomotionPolicy ~/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/tutorial_run && \
 touch ~/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/tutorial_run && \
 cd ~/unitree_rl_lab && \
-./unitree_rl_lab.sh -p --task Unitree-Go2-Velocity
+./unitree_rl_lab.sh -p --task Unitree-Go2-Velocity  
 ```  
 
 After this pre trained policy can be deployed in both sim and real. 
