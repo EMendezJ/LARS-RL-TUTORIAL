@@ -164,7 +164,7 @@ cd unitree_rl_lab/deploy/robots/go2/build
 
 ## LOADING PRE TRAINED POLICY
 
-[A pre trained policy can be found here](https://github.com/EMendezJ/LARS-RL-TUTORIAL/tree/main/Day2/Sim2RealGo2/TrainedGo2LocomotionPolicy), move the full folder to unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/
+[A pre trained policy can be found here](https://github.com/EMendezJ/LARS-RL-TUTORIAL/tree/main/Day2/Sim2RealGo2/TrainedGo2LocomotionPolicy), move the full folder to unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/  
 
 Then run
 
@@ -172,6 +172,19 @@ Then run
 cd unitree_rl_lab/
 
 python scripts/rsl_rl/play.py --task=Unitree-Go2-Velocity --checkpoint=/home/{USER}/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/TrainedGo2LocomotionPolicy/model_13800.pt
+#OR
+
+
+#SOLO CORRER SI NO SE TIENE LA CARPETA YA HECHA
+
+mkdir -p ~/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity && \
+
+#COPIAR POLICY Y EJECUTARLA
+
+cp -r ~/LARS-RL-TUTORIAL/Day2/Sim2RealGo2/TrainedGo2LocomotionPolicy ~/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/tutorial_run && \
+touch ~/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/tutorial_run && \
+cd ~/unitree_rl_lab && \
+./unitree_rl_lab.sh -p --task Unitree-Go2-Velocity
 ```
 
 After this pre trained policy can be deployed in both sim and real. 
