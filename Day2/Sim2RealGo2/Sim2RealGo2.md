@@ -172,6 +172,17 @@ Then run
 cd unitree_rl_lab/
 
 python scripts/rsl_rl/play.py --task=Unitree-Go2-Velocity --checkpoint=/home/{USER}/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/TrainedGo2LocomotionPolicy/model_13800.pt
+
+~~~ control ~~~
+
+cd ~/unitree_rl_lab/deploy/robots/go2/build
+./go2_ctrl --network wlp131s0f0
+
+~~~ control 2 ~~~
+
+cd ~/unitree_rl_lab/deploy/robots/go2/build
+./unitree_mujoco
+
 #OR
 
 
@@ -185,7 +196,7 @@ cp -r ~/LARS-RL-TUTORIAL/Day2/Sim2RealGo2/TrainedGo2LocomotionPolicy ~/unitree_r
 touch ~/unitree_rl_lab/logs/rsl_rl/unitree_go2_velocity/tutorial_run && \
 cd ~/unitree_rl_lab && \
 ./unitree_rl_lab.sh -p --task Unitree-Go2-Velocity
-```
+```  
 
 After this pre trained policy can be deployed in both sim and real. 
 
