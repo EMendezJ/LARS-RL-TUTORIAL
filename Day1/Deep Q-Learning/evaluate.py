@@ -11,6 +11,8 @@ from gymnasium.wrappers import AtariPreprocessing, FrameStackObservation
 
 gym.register_envs(ale_py)
 
+# Run with: python evaluate.py --env ALE/Pong-v5 --path models/ALE/Pong-v5_best.pt --render
+
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 parser = argparse.ArgumentParser()
