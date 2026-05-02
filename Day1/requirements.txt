@@ -1,0 +1,6 @@
+gymnasium[classic-control,toy-text]
+matplotlib
+numpy
+tensorflow
+torch
+pygame-ce
